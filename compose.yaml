@@ -14,6 +14,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./wp-content/themes/mundau-nautica:/var/www/html/wp-content/themes/mundau-nautica
+      - ./wp-content/plugins/mundau-nautica-core:/var/www/html/wp-content/plugins/mundau-nautica-core
     networks:
       - mundau_nautica_network
 

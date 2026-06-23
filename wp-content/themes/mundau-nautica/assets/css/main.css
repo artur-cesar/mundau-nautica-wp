@@ -511,15 +511,18 @@ p {
 }
 
 .card-grid--four > * {
-  flex: 0 0 220px;
+  flex: 1 1 220px;
+  max-width: 270px;
 }
 
 .card-grid--six > * {
-  flex: 0 0 180px;
+  flex: 1 1 150px;
+  max-width: 190px;
 }
 
 .card-grid--three > * {
-  flex: 0 0 340px;
+  flex: 1 1 280px;
+  max-width: 360px;
 }
 
 .feature-card,
@@ -532,12 +535,11 @@ p {
 }
 
 .feature-card {
-  min-height: 126px;
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: 54px minmax(0, 1fr);
   align-items: center;
   gap: 20px;
-  padding: 24px 26px;
+  padding: 22px;
 }
 
 .feature-card__icon {
@@ -1689,10 +1691,7 @@ p {
   }
 
   .feature-card {
-    min-height: auto;
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 18px;
-    padding: 22px;
+    padding: 20px;
   }
 
   .authority-section {

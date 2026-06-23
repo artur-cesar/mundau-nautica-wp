@@ -14,22 +14,30 @@
 /wp-config.php
 /wp-config-sample.php
 
-# wp-content — ignorar tudo por padrão
+# wp-content — ignorar tudo por padrão, reincluir seletivamente
 /wp-content/*
 
-# Manter o tema do projeto
+# index.php de segurança
+!/wp-content/index.php
+
+# Tema do projeto
 !/wp-content/themes/
 /wp-content/themes/*
 !/wp-content/themes/mundau-nautica/
 
-# Manter index.php de segurança do wp-content
-!/wp-content/index.php
+# Plugin do projeto
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/mundau-nautica-core/
 
-# Uploads (gerado em runtime, nunca commitar)
+# Uploads e cache (runtime)
 /wp-content/uploads/
-
-# Plugins de terceiros (gerenciados separadamente)
-/wp-content/plugins/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backup-db/
+/wp-content/advanced-cache.php
+/wp-content/wp-cache-config.php
+/wp-content/object-cache.php
 
 # Cache e arquivos gerados
 /wp-content/cache/
@@ -38,6 +46,9 @@
 /wp-content/advanced-cache.php
 /wp-content/wp-cache-config.php
 /wp-content/object-cache.php
+
+# Build
+/dist/
 
 # Dependências e ferramentas locais
 /node_modules/
