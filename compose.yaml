@@ -1,0 +1,41 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: mundau_nautica_wordpress
+    depends_on:
+      - database
+    ports:
+      - "${WORDPRESS_PORT}:80"
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content/themes/mundau-nautica:/var/www/html/wp-content/themes/mundau-nautica
+    networks:
+      - mundau_nautica_network
+
+  database:
+    image: mariadb:11.4
+    container_name: mundau_nautica_database
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - database_data:/var/lib/mysql
+    networks:
+      - mundau_nautica_network
+
+volumes:
+  wordpress_data:
+    name: mundau_nautica_wordpress_data
+  database_data:
+    name: mundau_nautica_database_data
+
+networks:
+  mundau_nautica_network:
+    name: mundau_nautica_network

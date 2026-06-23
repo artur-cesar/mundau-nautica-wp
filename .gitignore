@@ -1,0 +1,47 @@
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# WordPress core — ignorar tudo
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/readme.html
+/license.txt
+/wp-config.php
+/wp-config-sample.php
+
+# wp-content — ignorar tudo por padrão
+/wp-content/*
+
+# Manter o tema do projeto
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/mundau-nautica/
+
+# Manter index.php de segurança do wp-content
+!/wp-content/index.php
+
+# Uploads (gerado em runtime, nunca commitar)
+/wp-content/uploads/
+
+# Plugins de terceiros (gerenciados separadamente)
+/wp-content/plugins/
+
+# Cache e arquivos gerados
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backup-db/
+/wp-content/advanced-cache.php
+/wp-content/wp-cache-config.php
+/wp-content/object-cache.php
+
+# Dependências e ferramentas locais
+/node_modules/
+/vendor/
+*.log
+.DS_Store
+Thumbs.db
